@@ -182,9 +182,6 @@ class NamedNumpyArray(np.ndarray):
           raise TypeError("Unknown index: %s; %s" % (type(index), index))
         dim += 1
       obj._index_names = new_names + self._index_names[dim:]
-      if len(obj._index_names) != len(obj.shape):
-        raise IndexError("Names don't match object shape: %s != %s" % (
-            len(obj.shape), len(obj._index_names)))
     return obj
 
   def __setitem__(self, indices, value):
